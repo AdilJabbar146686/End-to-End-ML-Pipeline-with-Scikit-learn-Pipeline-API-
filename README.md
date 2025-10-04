@@ -1,73 +1,124 @@
-Objective
+End-to-End ML Pipeline with Scikit-learn Pipeline API
 
-The objective of this task is to build a reusable and production-ready machine learning pipeline for predicting customer churn using the Telco Churn Dataset.
+This repository demonstrates a complete End-to-End Machine Learning Pipeline built using the Scikit-learn Pipeline API.
+The project focuses on building a robust, reusable, and scalable ML workflow — from data preprocessing and model training to evaluation and model persistence.
 
-The pipeline must include data preprocessing, model training, hyperparameter tuning, and export for deployment.
+Project Overview
 
-Methodology / Approach
+This project showcases how to streamline the machine learning process using Scikit-learn’s Pipeline and ColumnTransformer tools.
+It is designed to ensure reproducibility, cleaner code, and easier model deployment.
 
-Data Loading
+The primary goal of this project is to:
 
-Train, validation, and test sets loaded from Telco Churn dataset.
+Handle data preprocessing automatically
 
-Preprocessing
+Train and evaluate a predictive model
 
-Used ColumnTransformer with:
+Save and reuse the trained model using .pkl format
 
-StandardScaler for numerical features.
+Demonstrate professional ML project structuring
 
-OneHotEncoder for categorical features.
+Problem Statement
+
+Predict customer churn based on available features using machine learning.
+The pipeline includes data transformation, encoding, feature scaling, and model training steps — all wrapped neatly inside the Scikit-learn Pipeline framework.
+
+Technologies and Libraries Used
+
+Python 3.x
+
+NumPy
+
+Pandas
+
+Scikit-learn
+
+Matplotlib
+
+Seaborn
+
+Jupyter Notebook
+
+Joblib / Pickle
+
+Repository Structure
+End-to-End-ML-Pipeline-with-Scikit-learn-Pipeline-API-/
+│
+├── task2.ipynb                 # Main Jupyter Notebook containing the pipeline code
+├── best_churn_model.pkl        # Trained machine learning model
+├── README.md                   # Project documentation
+
+⚙️ Key Features
+
+Data preprocessing with automatic handling of categorical and numerical features
+End-to-End Pipeline using Pipeline() and ColumnTransformer()
+Model training, testing, and evaluation
+Model serialization using .pkl for deployment
+Well-structured and modular workflow
+
+Model Workflow
+
+Data Import & Exploration
+Load and inspect the dataset.
+
+Data Preprocessing
+
+Handle missing values
+
+Encode categorical variables
+
+Scale numerical features
 
 Pipeline Construction
+Combine all preprocessing and model steps using Pipeline() and ColumnTransformer().
 
-Built an end-to-end Pipeline that combines preprocessing + model.
+Model Training & Evaluation
+Train the model on training data and evaluate using test data.
 
-Implemented two ML models:
+Model Saving
+Export the final trained model as best_churn_model.pkl.
 
-Logistic Regression
+How to Use
 
-Random Forest Classifier
+Clone the repository
 
-Hyperparameter Tuning
+git clone https://github.com/AdilJabbar146686/End-to-End-ML-Pipeline-with-Scikit-learn-Pipeline-API-.git
+cd End-to-End-ML-Pipeline-with-Scikit-learn-Pipeline-API-
 
-Used GridSearchCV to optimize model hyperparameters.
 
-Cross-validation (cv=5) ensures robust evaluation.
+Install dependencies
 
-Model Evaluation
+pip install -r requirements.txt
 
-Evaluated models using accuracy score and classification report.
 
-Compared performance on test dataset.
+Run the Jupyter Notebook
 
-Exporting
+jupyter notebook task2.ipynb
 
-Saved the final trained pipeline with joblib for reusability in production.
 
-Key Results / Observations
+Load the trained model
 
-Preprocessing with Pipeline ensured that scaling and encoding were seamlessly applied within the workflow.
+import pickle
 
-Logistic Regression provided a solid baseline with interpretability.
+with open('best_churn_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
-Random Forest achieved better performance after hyperparameter tuning.
+Results
 
-The final model was exported as a .pkl file, making it directly loadable for deployment.
+The pipeline achieved strong predictive performance with optimized preprocessing and feature scaling.
 
-Demonstrated production-readiness by ensuring:
+Model performance metrics (accuracy, precision, recall, F1-score) are evaluated and visualized in the notebook.
 
-Consistent preprocessing.
+Future Improvements
 
-Easy model reuse.
+Integrate with Flask or Streamlit for web-based model deployment
 
-Reproducibility via pipelines and joblib export.
+Add hyperparameter tuning using GridSearchCV
 
-Skills Gained
+Incorporate more advanced models (e.g., XGBoost, LightGBM)
 
-Building end-to-end ML pipelines using Scikit-learn.
+Automate data ingestion and logging
 
-Applying hyperparameter tuning with GridSearchCV.
-
-Exporting and reusing models with joblib.
-
-Designing ML workflows with production-readiness practices.
+Author
+Adil Jabbar
+https://github.com/AdilJabbar146686/End-to-End-ML-Pipeline-with-Scikit-learn-Pipeline-API-.git
